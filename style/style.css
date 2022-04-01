@@ -96,7 +96,7 @@ img{
 }
 
 .nav{
-     height: var(--header-height);
+    height: var(--header-height);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -253,17 +253,17 @@ img{
 .education__year{
     font-size: var(--smaller-font-size);
 }
-/*SKILLS*/
-.skills__content{
+/*SKILLS AND LANGUAGES*/
+.skills__content,.languages__content{
     grid-template-columns: auto auto;
     gap:0;
 }
-.skills__name{
+.skills__name,.languages__name{
     display: flex;
     align-items: center;
     margin-bottom: var(--mb-3);
 }
-.skills__circle{
+.skills__circle,.languages__circle{
     display: inline-block;
     width: 5px;
     height: 5px;
@@ -280,4 +280,82 @@ img{
 }
 .certificate__description{
     margin-left: .75rem;
+}
+/*interests*/
+.interests__container{
+    grid-template-columns: auto auto auto;
+    margin-top: var(--mb-2);
+}
+.interests__content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.interets__icon{
+    font-size: 1.5rem;
+    color: var(--text-color-light);
+    margin-bottom: .25rem;
+}
+
+@media screen and (max-width: 320px){
+    .nav__list{
+        grid-template-columns: auto auto;
+        gap:1rem .5rem;
+    }
+}
+@media screen and (min-width: 968px) {
+    body{
+        margin: 3rem 0;
+    }
+    .bd-container{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .l-header{
+        display: none;
+    }
+    .resume{
+        display: grid;
+        grid-template-columns: auto auto;
+        background-color: var(--container-color);
+        box-shadow: 0 0 8px rgba(13,12,12,.15);
+    }
+    .resume__left{
+        background-color: var(--container-color-alt);
+    }
+    .resume__left,.resume__right{
+        padding: 0 1.5rem;
+    }
+    .home__container{
+        gap:1.5rem;
+    }
+    .languages__content{
+        grid-template-columns: repeat(3,max-content);
+        column-gap: 3.5rem;
+    }
+    .interests__container{
+        grid-template-columns: repeat(4,max-content);
+        column-gap: 3.5rem;
+    }
+
+}
+
+.change-theme{
+    position: absolute;
+    right: 0;
+    top: 2.2rem;
+    display: flex;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+.change-theme:hover{
+    color:var(--title-color);
+}
+body.dark-theme{
+    --title-color: #f2f2f2;
+    --text-color: #bfbfbf;
+    --container-color: #212121;
+    --container-color-alt: #181616;
+    --body-color: #2b2b2b;
 }
